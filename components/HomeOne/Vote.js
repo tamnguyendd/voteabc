@@ -138,6 +138,7 @@ const Vote = ({ pt70 }) => {
                         {/* <div className='icon'>
                               <img src='/images/icon/icon12.png' alt='image' />
                           </div> */}
+                          <p>id:{item.id}</p>
                         <h3>{item.title}</h3>
                         <p>
                           {item.decription}
@@ -173,9 +174,9 @@ const Vote = ({ pt70 }) => {
 
                 </div>
 
-                <div>
+                <div className='row justify-content-center'>
                   {items.map(item =>
-                    <div>
+                    <div className='col-lg-6 col-sm-6 col-md-6'>
                       <p>■{item.title}</p>
                       {
                         voted_data.map(voted => {
