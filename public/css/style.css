@@ -1097,7 +1097,9 @@ Main Banner Area CSS
 .voted-color{
   color: var(--bs-pink);
 }
-
+.css-fix {
+  white-space: pre-wrap; /* or pre-line */
+}
 .main-banner-box .coinbaseBtn i {
   font-size: 20px;
   margin-left: -30px;

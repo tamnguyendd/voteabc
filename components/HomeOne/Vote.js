@@ -142,7 +142,7 @@ const Vote = ({ pt70 }) => {
                           </div> */}
                           <p>id:{item.id}</p>
                         <h3>{item.title}</h3>
-                        <p>
+                        <p className='css-fix'>
                           {item.decription}
                         </p>
 
@@ -171,6 +171,7 @@ const Vote = ({ pt70 }) => {
                         <hr />
                         <p><strong className='voted-color'>Voted: {count_vote(item.id)}</strong></p>
                       </div>
+
                     </div>
                   )}
 
@@ -190,6 +191,7 @@ const Vote = ({ pt70 }) => {
                         }
                         )
                       }
+                      <br></br>
                     </div>
                   )}
 
