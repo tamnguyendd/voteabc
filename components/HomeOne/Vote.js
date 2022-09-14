@@ -6,6 +6,7 @@ import { constant_value } from '../constant';
 import { metamask } from "../Metamask/Metamask";
 import { errorMsg } from '../errorMessage';
 
+//pt70 padding top
 const Vote = ({ pt70 }) => {
   const [items, setItems] = useState([]);
   const [login_mm_address, setlogin_mm_address] = useState('');
@@ -122,7 +123,8 @@ const Vote = ({ pt70 }) => {
 
   return (
     <>
-      <div className={`buy-sell-cryptocurrency-area bg-image ${pt70}`}>
+    {/* ${pt70} */}
+      <div className={`buy-sell-cryptocurrency-area bg-image `}> 
         <div className='container'>
           {/* <div className='section-title'>
             <h2>Votes</h2>
@@ -173,16 +175,17 @@ const Vote = ({ pt70 }) => {
                   )}
 
                 </div>
+                <hr></hr>
 
                 <div className='row justify-content-center'>
-                  {items.map(item =>
-                    <div className='col-lg-6 col-sm-6 col-md-6'>
-                      <p>■{item.title}</p>
+                  {items.map((item, index) =>
+                    <div key={"div" + index} className='col-lg-6 col-sm-6 col-md-6'>
+                      <p key={index}>■{item.title}</p>
                       {
-                        voted_data.map(voted => {
+                        voted_data.map((voted, index) => {
 
                           if (`${voted.item_id}` === `${item.id}`) {
-                            return <p>→　{voted.vote_by}</p>
+                            return <p key={index}>→　{voted.vote_by}</p>
                           }
                         }
                         )
@@ -197,6 +200,7 @@ const Vote = ({ pt70 }) => {
           </div>
         </div>
       </div>
+ 
     </>
   );
 };
