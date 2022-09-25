@@ -7588,6 +7588,9 @@ Go Top CSS
 .loading_img{
   width: 35px;
 }
+.home_loading_img{
+  width: 100px;
+}
 .coinbaseBtn{
   cursor: pointer;
 }

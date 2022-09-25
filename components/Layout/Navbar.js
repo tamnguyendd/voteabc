@@ -18,6 +18,14 @@ const Navbar = () => {
     // check to show Install MetaMask or Connect MetaMask Button
     setInstallMetaMask(metamask.checkMM());
 
+    async function addEthereumChain() {
+      var isConnected = await metamask.isMetaMaskConnected();
+      if (metamask.checkMM() && isConnected == false) {
+        await metamask.wallet_addEthereumChain();
+      }
+    }
+    addEthereumChain();
+    
     // check to show Balance of Coin
     async function showBalanceCoin() {
       setshowBalance(await metamask.isMetaMaskConnected());
@@ -54,9 +62,14 @@ const Navbar = () => {
     if(showInstallMetaMask != true){
       window.open('https://metamask.io/', '_blank');
     }else{
-      var cnMM = await metamask.connectMetamask();
-      if(cnMM === true){
-        setshowBalance(true);
+      var isConnected = await metamask.isMetaMaskConnected();
+      if (metamask.checkMM() && isConnected == false) {
+        await metamask.wallet_addEthereumChain();
+      } else {
+        var cnMM = await metamask.connectMetamask();
+        if (cnMM === true) {
+          setshowBalance(true);
+        }
       }
     }
   }

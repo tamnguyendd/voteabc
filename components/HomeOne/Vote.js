@@ -12,6 +12,7 @@ const Vote = ({ pt70 }) => {
   const [login_mm_address, setlogin_mm_address] = useState('');
   const [isVoteClickStart, setIsVoteClickStart] = useState(false);
   const [voted_data, setVoted] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getItems = async () => {
@@ -34,12 +35,17 @@ const Vote = ({ pt70 }) => {
 
         var senderAddress = await metamask.getCurrentMM_Address();
         setlogin_mm_address(senderAddress);
+
+        setIsLoading(false);
       } catch (err) {
         console.log(err);
+        
+        setIsLoading(false);
       }
     };
 
     getItems();
+
   }, []);
 
   const is_voted = (item_id) => {
@@ -126,6 +132,13 @@ const Vote = ({ pt70 }) => {
     {/* ${pt70} */}
       <div className={`buy-sell-cryptocurrency-area bg-image `}> 
         <div className='container'>
+
+          {
+            isLoading ? (<div className='row justify-content-center'>
+              <img src="/images/loading.gif" className="home_loading_img" alt="loading..." />
+            </div>) : ""
+          }
+
           {/* <div className='section-title'>
             <h2>Votes</h2>
           </div> */}

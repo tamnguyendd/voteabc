@@ -69,7 +69,10 @@ export const metamask = {
   },
 
   getChainId: async function () {
-    return await this.getWeb3().eth.getChainId();
+    if (this.checkMM()) {
+      return await this.getWeb3().eth.getChainId();
+    }
+    return null;
   },
 
   getDefaultCoin: async function () {
@@ -118,6 +121,7 @@ export const metamask = {
     }
     return false;
   },
+
   isMetaMaskConnected: async function () {
     if (this.checkMM()) {
       var accounts = await this.getWeb3().eth.getAccounts();
@@ -128,6 +132,27 @@ export const metamask = {
     return false;
   },
   //#endregion end Connect MeTaMask
+
+  wallet_addEthereumChain: async function () {
+    let ethereum = window.ethereum;
+    const data = [{
+      chainId: '0x61',
+      chainName: 'BSC Testnet',
+      nativeCurrency:
+      {
+        name: 'BNB',
+        symbol: 'BNB',
+        decimals: 18
+      },
+      rpcUrls: ['https://data-seed-prebsc-1-s1.binance.org:8545'],
+      blockExplorerUrls: ['https://explorer.binance.org/smart-testnet'],
+    }]
+    /* eslint-disable */
+    const tx = await ethereum.request({ method: 'wallet_addEthereumChain', params: data }).catch()
+    if (tx) {
+      console.log(tx)
+    }
+  },
 
   //#region verify
   signMM: async function () {
@@ -151,6 +176,9 @@ export const metamask = {
   },
 
   get_vote_log: async function (item_ids) {
+
+    var ishasMM = await this.checkMM();
+    if(!ishasMM) return [];
 
     //https://github.com/bnb-chain/bsc/issues/113
     const chunkLimit = 2000;
