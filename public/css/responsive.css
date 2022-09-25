@@ -34,7 +34,7 @@
   }
   .navbar-area .navbar .navbar-nav {
     margin-left: 0px;
-    height: 450px;
+    height: auto;
     overflow-y: scroll;
     position: absolute;
     background: #fff;
