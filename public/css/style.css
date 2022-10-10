@@ -7651,3 +7651,16 @@ Go Top CSS
   color: #badbcc;
 }
 /*# sourceMappingURL=style.css.map */
+
+.text-align-right{
+  text-align: end;
+}
+
+
+.up{
+  color: green;
+}
+
+.down{
+  color: red;
+}
