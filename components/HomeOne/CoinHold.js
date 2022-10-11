@@ -14,11 +14,12 @@ const CoinHold = ({ pt70 }) => {
   useEffect(() => {
     const getItems = async () => {
 
-      list.push({ id: 1, name: 'CHESS', bought_price: 0.284, cr_price: 0, symbol: 'CHESSUSDT' });
-      list.push({ id: 2, name: 'FLM', bought_price: 0.1211, cr_price: 0, symbol: 'FLMUSDT' });
-      
-      list.push({ id: 4, name: 'BTC', bought_price: 19525, cr_price: 0, symbol: 'BTCUSDT' });
-      list.push({ id: 5, name: 'CELO', bought_price: 0.78, cr_price: 0, symbol: 'CELOUSDT' });
+    list.push({id:1, name: 'CHESS', bought_price: 0.284,cr_price: 0, symbol: 'CHESSUSDT'});
+    list.push({id:2, name: 'FLM', bought_price: 0.1211,cr_price: 0, symbol: 'FLMUSDT'});
+    list.push({id:3, name: 'FLM', bought_price: 0.106,cr_price: 0, symbol: 'FLMUSDT'});
+    list.push({id:4, name: 'BTC', bought_price: 19525,cr_price: 0, symbol: 'BTCUSDT'});
+    list.push({id:5, name: 'CELO', bought_price: 0.78,cr_price: 0, symbol: 'CELOUSDT'});
+
       //list.push({ id: 6, name: 'WLKN', bought_price: 0.04607, cr_price: 0, symbol: 'WLKNUSDT' });
 
       for(var i = 0; i< list.length ; i ++){
