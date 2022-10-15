@@ -18,10 +18,10 @@ const CoinHold = ({ pt70 }) => {
       list.push({ id: 2, name: 'FLM', bought_price: 0.1211, cr_price: 0, qty: 83, symbol: 'FLMUSDT' });
       list.push({ id: 3, name: 'FLM', bought_price: 0.106, cr_price: 0, qty: 99, symbol: 'FLMUSDT' });
       list.push({ id: 4, name: 'BTC', bought_price: 19525, cr_price: 0, qty: 0.02559, symbol: 'BTCUSDT' });
+      list.push({ id: 4, name: 'BTC', bought_price: 19170, cr_price: 0, qty: 0.00065, symbol: 'BTCUSDT' });
       list.push({ id: 5, name: 'CELO', bought_price: 0.78, cr_price: 0, qty: 47.2, symbol: 'CELOUSDT' });
       list.push({ id: 6, name: 'ETH', bought_price: 1295, cr_price: 0, qty: 0.04302, symbol: 'ETHUSDT' });
       list.push({ id: 7, name: 'CRV', bought_price: 0.831, cr_price: 0, qty: 19.3, symbol: 'CRVUSDT' });
-      
 
       //list.push({ id: 6, name: 'WLKN', bought_price: 0.04607, cr_price: 0, symbol: 'WLKNUSDT' });
 
